@@ -1,0 +1,29 @@
+name: Validate commit message
+
+on: [push, pull_request]
+
+jobs:
+  validate-commit-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Validate commit message
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: .commitlintrc.json
+
+      - name: Check commit messages
+        run: |
+          regex="^(feat|fix|docs|test|build|perf|style|refactor|chore|ci|raw|cleanup|remove): .+$"
+          messages=$(git log --pretty=format:%s)
+          echo "$messages" | while IFS= read -r msg; do
+            echo "$msg"
+            if ! [[ $msg =~ $regex ]]; then
+              echo "Invalid commit message: $msg"
+              exit 1
+            fi
+          done
