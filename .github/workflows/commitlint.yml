@@ -16,14 +16,16 @@ jobs:
         with:
           configFile: .commitlintrc.json
 
-      - name: Check commit messages
-        run: |
-          regex="^(feat|fix|docs|test|build|perf|style|refactor|chore|ci|raw|cleanup|remove): .+$"
-          messages=$(git log --pretty=format:%s)
-          echo "$messages" | while IFS= read -r msg; do
-            echo "$msg"
-            if ! [[ $msg =~ $regex ]]; then
-              echo "Invalid commit message: $msg"
-              exit 1
-            fi
-          done
+    #   The following step is essentially what the "validate commit message" step is doing
+    #   If someday the wagoid/commitlint-github-action@v5 starts to fail, this will help us
+    #   - name: Check commit messages
+    #     run: |
+    #       regex="^(feat|fix|docs|test|build|perf|style|refactor|chore|ci|raw|cleanup|remove): .+$"
+    #       messages=$(git log --pretty=format:%s)
+    #       echo "$messages" | while IFS= read -r msg; do
+    #         echo "$msg"
+    #         if ! [[ $msg =~ $regex ]]; then
+    #           echo "Invalid commit message: $msg"
+    #           exit 1
+    #         fi
+    #       done
