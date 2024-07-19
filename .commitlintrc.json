@@ -1,0 +1,37 @@
+{
+    "rules": {
+        "type-enum": [
+            2,
+            "always",
+            [
+                "feat",
+                "fix",
+                "docs",
+                "test",
+                "build",
+                "perf",
+                "style",
+                "refactor",
+                "chore",
+                "ci",
+                "raw",
+                "cleanup",
+                "remove"
+            ]
+        ],
+        "type-case": [
+            2,
+            "always",
+            "lower-case"
+        ],
+        "subject-empty": [
+            2,
+            "never"
+        ],
+        "subject-case": [
+            2,
+            "always",
+            "lower-case"
+        ]
+    }
+}
