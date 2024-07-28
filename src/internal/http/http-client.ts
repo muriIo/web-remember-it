@@ -4,6 +4,15 @@ class HttpClientService {
     private readonly api: AxiosInstance;
 
     constructor(baseURL: string) {
+
+        if (!baseURL) {
+            const message = "Base url is not defined!";
+
+            console.log(message);
+
+            throw new Error(message);
+        }
+
         this.api = axios.create({
             baseURL
         });
