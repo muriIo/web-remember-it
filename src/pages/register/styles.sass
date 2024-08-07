@@ -1,0 +1,122 @@
+.register-container
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    background-color: white
+    border-radius: 8px
+    width: 100%
+    max-width: 600px
+    height: 80%
+    padding: 20px
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5)
+    margin: 0 auto
+
+.register-column
+    flex-direction: column
+    display: flex
+    padding: 10px
+    flex: 1
+    min-width: 200px
+
+    label
+        color: #696969
+        margin-bottom: 20px
+        position: relative
+        input
+            width: 100%
+            border-radius: 4px
+            border-width: 1px
+            padding: 6px
+            border-color: #696969
+        .error-message
+            min-height: 16px
+            color: red
+            font-size: 12px
+        .validation-status
+            display: flex
+            align-items: center
+            font-size: 12px
+            margin-top: 5px
+
+.divider
+    width: 1px
+    background-color: #9A9A89
+    margin: 0 20px
+
+.passsword-container
+    display: flex
+    position: relative
+    align-items: center
+    margin-bottom: 4px
+
+i
+    position: absolute
+    right: 5px
+    top: 10%
+    transform: translateY(80%)
+    cursor: pointer
+    display: flex
+    alignItems: center
+    justifyContent: center
+
+    input
+        padding: 10px
+        padding-right: 40px
+        width: 100%
+        box-sizing: border-box
+
+.register-right
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex: 1
+    min-width: 200px
+    text-align: center
+
+    img
+        width: 100%
+        height: auto
+        max-width: 200px
+
+    .link
+        text-align: center
+        margin-top: 10px
+        margin-bottom: 20px
+        font-weight: bold
+        text-decoration: underline
+        color: black
+        cursor: pointer
+        font-size: 11px
+
+    .terms
+        display: flex
+        flex-direction: row
+        align-items: baseline
+        gap: 3px
+        text-align: center
+
+        input[type='checkbox']
+            margin-right: 5px
+            cursor: pointer
+
+        label
+            cursor: pointer
+            font-size: 11px
+
+        a
+            margin-top: 10px
+            margin-bottom: 20px
+            font-weight: bold
+            text-decoration: underline
+            color: black
+            cursor: pointer
+            font-size: 10px
+
+            text
+                font-size: 11px
+    .error-message
+        color: red
+        font-size: 12px
+    button
+        margin-top: 20px
+        width: 100%
